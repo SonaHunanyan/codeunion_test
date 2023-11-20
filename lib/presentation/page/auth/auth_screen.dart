@@ -5,6 +5,7 @@ import 'package:codeunion_test/presentation/page/auth/bloc/auth_state.dart';
 import 'package:codeunion_test/presentation/page/auth/widgets/widgets.dart';
 import 'package:codeunion_test/presentation/page/widgets/custom_app_bar.dart';
 import 'package:codeunion_test/presentation/page/widgets/primary_button.dart';
+import 'package:codeunion_test/presentation/router/app_router.dart';
 import 'package:codeunion_test/presentation/theme/app_strings.dart';
 import 'package:codeunion_test/presentation/theme/app_theme.dart';
 import 'package:codeunion_test/presentation/util/constants.dart';
@@ -132,6 +133,8 @@ extension _StateAddititon on _State {
         context.themeData.colorScheme.error,
       );
     }
-    if (state is LoginSuccessState) {}
+    if (state is LoginSuccessState) {
+      context.router.push(const HomeRoute());
+    }
   }
 }

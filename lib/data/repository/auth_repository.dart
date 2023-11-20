@@ -45,4 +45,10 @@ class AuthRepository implements IAuthRepository {
       throw Exception(e);
     }
   }
+
+  @override
+  void logout() {
+    _user = null;
+    _token = null;
+  }
 }

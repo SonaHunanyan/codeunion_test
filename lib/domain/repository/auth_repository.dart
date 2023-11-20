@@ -10,4 +10,6 @@ abstract class IAuthRepository {
 
   Future<ApiResponse<LoginResponse>> login(
       {required String email, required String password});
+
+  void logout();
 }

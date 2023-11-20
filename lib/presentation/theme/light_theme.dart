@@ -10,8 +10,10 @@ final lightTheme = base.copyWith(
     primaryContainer: AppColors.white,
     primary: AppColors.grey,
     secondary: AppColors.purple,
-    error: Colors.red,
+    error: AppColors.red,
   ),
+  secondaryHeaderColor: AppColors.black,
+  primaryColor: AppColors.bgContentGrey,
   dividerColor: AppColors.stroke,
   textTheme: base.primaryTextTheme.copyWith(
     //   displayLarge: base.primaryTextTheme.displayLarge!.copyWith(
@@ -26,13 +28,13 @@ final lightTheme = base.copyWith(
       height: 1.5,
       color: Colors.white,
     ),
-    //   displaySmall: base.primaryTextTheme.displaySmall!.copyWith(
-    //     fontFamily: FontFamily.poppins,
-    //     fontWeight: FontWeight.normal,
-    //     fontSize: 8.awr,
-    //     height: 1,
-    //     color: AppColors.mail,
-    //   ),
+    displaySmall: base.primaryTextTheme.displaySmall!.copyWith(
+      fontFamily: FontFamily.manrope,
+      fontWeight: FontWeight.normal,
+      fontSize: 10,
+      height: 1.4,
+      color: AppColors.black,
+    ),
     //   headlineLarge: base.primaryTextTheme.headlineLarge?.copyWith(
     //     height: 1.3,
     //     fontWeight: FontWeight.w700,
@@ -55,13 +57,13 @@ final lightTheme = base.copyWith(
     //     height: 1.3,
     //     color: Colors.white,
     //   ),
-    //   titleLarge: base.primaryTextTheme.titleLarge!.copyWith(
-    //     fontFamily: FontFamily.poppins,
-    //     fontWeight: FontWeight.w600,
-    //     fontSize: 20.awr,
-    //     letterSpacing: -.2,
-    //     height: 1.3,
-    //   ),
+    titleLarge: base.primaryTextTheme.titleLarge!.copyWith(
+      fontFamily: FontFamily.manrope,
+      fontWeight: FontWeight.w600,
+      fontSize: 24,
+      height: 1.66,
+      color: AppColors.black,
+    ),
     titleMedium: base.primaryTextTheme.titleMedium!.copyWith(
       fontFamily: FontFamily.manrope,
       fontWeight: FontWeight.w500,

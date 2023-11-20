@@ -8,4 +8,13 @@ class AppStrings {
   static const password = 'Пароль';
   static const login = 'Войти';
   static const register = 'Зарегистрироваться';
+
+  //Home
+  static const feed = 'Лента';
+  static const map = 'Карта';
+  static const favorite = 'Избранные';
+  static const profile = 'Профиль';
+
+  //Profile
+  static const logout = 'Выйти';
 }
