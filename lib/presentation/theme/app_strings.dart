@@ -1,6 +1,6 @@
 class AppStrings {
   static const appName = 'Codeunion Test';
-  static const valueRequired = 'This field cannot be left blank';
+  static const valueRequired = 'Это поле не может быть пустым';
 
   // Auth
   static const authorization = 'Авторизация';

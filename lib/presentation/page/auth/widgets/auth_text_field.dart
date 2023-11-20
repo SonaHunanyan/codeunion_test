@@ -6,6 +6,8 @@ class AuthTextField extends StatelessWidget {
   const AuthTextField({
     this.controller,
     this.hint,
+    this.error,
+    this.onChanged,
     this.hasBorder = false,
     super.key,
   });
@@ -13,6 +15,8 @@ class AuthTextField extends StatelessWidget {
   final String? hint;
   final bool hasBorder;
   final TextEditingController? controller;
+  final String? error;
+  final Function(String value)? onChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -28,9 +32,11 @@ class AuthTextField extends StatelessWidget {
             color: context.themeData.colorScheme.primaryContainer,
           ),
           child: TextField(
+            onChanged: onChanged,
             controller: controller,
             style: context.themeData.textTheme.bodyMedium,
             decoration: InputDecoration(
+              errorText: error,
               border: InputBorder.none,
               hintText: hint,
               hintStyle: context.themeData.textTheme.bodyMedium?.copyWith(
