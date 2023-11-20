@@ -8,8 +8,10 @@ import 'package:codeunion_test/presentation/page/widgets/primary_button.dart';
 import 'package:codeunion_test/presentation/theme/app_strings.dart';
 import 'package:codeunion_test/presentation/theme/app_theme.dart';
 import 'package:codeunion_test/presentation/util/constants.dart';
+import 'package:codeunion_test/presentation/util/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get_it/get_it.dart';
 
 @RoutePage()
 class AuthScreen extends StatefulWidget {
@@ -25,7 +27,7 @@ class _State extends State<AuthScreen> {
   final _loginController = TextEditingController();
   final _passwordController = TextEditingController();
 
-  final _bloc = AuthBloc();
+  final _bloc = AuthBloc(authRepository: GetIt.I.get());
 
   @override
   void dispose() {
@@ -72,6 +74,7 @@ class _State extends State<AuthScreen> {
                       height: 32 * rh(context),
                     ),
                     PrimaryButton(
+                      isLoading: state is LoginInProgressState,
                       onTap: () {
                         _bloc.add(
                           FormValidationEvent(
@@ -119,5 +122,16 @@ extension _StateAddititon on _State {
       _passwordError = state.passwordError;
       _loginError = state.loginError;
     }
+    if (state is FormValidState) {
+      _bloc.add(LoginEvent(
+          login: _loginController.text, password: _passwordController.text));
+    }
+    if (state is FailToLoginState) {
+      Utils.showSnackBar(
+        state.error,
+        context.themeData.colorScheme.error,
+      );
+    }
+    if (state is LoginSuccessState) {}
   }
 }

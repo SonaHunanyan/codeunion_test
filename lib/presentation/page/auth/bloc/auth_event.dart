@@ -15,3 +15,9 @@ class FormValidationEvent extends AuthEvent {
   final String login;
   final String password;
 }
+
+class LoginEvent extends AuthEvent {
+  LoginEvent({required this.login, required this.password});
+  final String login;
+  final String password;
+}

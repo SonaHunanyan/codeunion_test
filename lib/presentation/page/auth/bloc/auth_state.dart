@@ -23,3 +23,12 @@ class FormInvalidState extends AuthState {
 }
 
 class FormValidState extends AuthState {}
+
+class LoginInProgressState extends AuthState {}
+
+class LoginSuccessState extends AuthState {}
+
+class FailToLoginState extends AuthState {
+  FailToLoginState({required this.error});
+  final String error;
+}

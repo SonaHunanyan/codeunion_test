@@ -10,6 +10,7 @@ final lightTheme = base.copyWith(
     primaryContainer: AppColors.white,
     primary: AppColors.grey,
     secondary: AppColors.purple,
+    error: Colors.red,
   ),
   dividerColor: AppColors.stroke,
   textTheme: base.primaryTextTheme.copyWith(

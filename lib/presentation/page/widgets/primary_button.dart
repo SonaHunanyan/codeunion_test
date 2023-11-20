@@ -6,11 +6,13 @@ class PrimaryButton extends StatelessWidget {
   const PrimaryButton({
     required this.title,
     this.onTap,
+    this.isLoading = false,
     super.key,
   });
 
   final VoidCallback? onTap;
   final String title;
+  final bool isLoading;
 
   @override
   Widget build(BuildContext context) {
@@ -26,10 +28,14 @@ class PrimaryButton extends StatelessWidget {
             6 * rh(context),
           ),
         ),
-        child: Text(
-          title,
-          style: context.themeData.textTheme.displayMedium,
-        ),
+        child: isLoading
+            ? CircularProgressIndicator(
+                color: context.themeData.colorScheme.primaryContainer,
+              )
+            : Text(
+                title,
+                style: context.themeData.textTheme.displayMedium,
+              ),
       ),
     );
   }
