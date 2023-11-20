@@ -67,6 +67,7 @@ class _State extends State<AuthScreen> {
                       onChanged: (value) => _bloc.add(
                         PasswordValidationEvent(value: value),
                       ),
+                      obscureText: true,
                       error: _passwordError,
                       controller: _passwordController,
                       hint: AppStrings.password,

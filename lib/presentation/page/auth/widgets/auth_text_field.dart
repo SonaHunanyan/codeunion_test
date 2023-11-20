@@ -9,6 +9,7 @@ class AuthTextField extends StatelessWidget {
     this.error,
     this.onChanged,
     this.hasBorder = false,
+    this.obscureText = false,
     super.key,
   });
 
@@ -17,6 +18,7 @@ class AuthTextField extends StatelessWidget {
   final TextEditingController? controller;
   final String? error;
   final Function(String value)? onChanged;
+  final bool obscureText;
 
   @override
   Widget build(BuildContext context) {
@@ -32,6 +34,7 @@ class AuthTextField extends StatelessWidget {
             color: context.themeData.colorScheme.primaryContainer,
           ),
           child: TextField(
+            obscureText: obscureText,
             onChanged: onChanged,
             controller: controller,
             style: context.themeData.textTheme.bodyMedium,
